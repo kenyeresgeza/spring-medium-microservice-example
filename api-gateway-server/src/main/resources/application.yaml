@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+       discovery:
+         locator:
+           # discovery
+           enabled: true
+           lower-case-service-id: true
+       routes:
+        - id: currency_conversion
+          uri: lb://currency-conversion-service # or domain name
+          predicates:
+            - Path=/check
+            - Method=GET
+        - id: currency_exchange
+          uri: lb://currency-exchange-service # or domain name
+          predicates:
+            - Path=/check
+            - Method=GET
+
+server:
+  port: 8787
+eureka:
+  client:
+    # fetch-registry: true
+    # register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8777/eureka/"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+  endpoint:
+    health:
+      show-details: ALWAYS

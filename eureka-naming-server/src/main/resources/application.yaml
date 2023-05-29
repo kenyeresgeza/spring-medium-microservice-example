@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eureka-naming-server
+server:
+  port: 8777
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

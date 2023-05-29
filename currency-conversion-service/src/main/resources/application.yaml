@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: currency-conversion-service
+server:
+  port: 8100
+eureka:
+  client:
+    # fetch-registry: true
+    # register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8777/eureka/"
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

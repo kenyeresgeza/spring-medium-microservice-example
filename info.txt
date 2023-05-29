@@ -1,0 +1,36 @@
+
+CURRENCY CONVERSION:
+	http://localhost:8100
+	
+	run more than one instance:
+	/usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar -Dserver.port=9000 currency-conversion-service-0.0.1-SNAPSHOT.jar
+
+
+
+CURRENCY EXCHANGE
+	http://localhost:8000
+
+
+EUREKA
+	http://localhost:8700
+
+
+
+API GATEWAY:	http://localhost:8787
+	api-gateway-name/service-name/url
+	http://localhost:8787/currency-conversion-service/check	
+
+
+
+RESILIENCE
+	http://localhost:9797/resilience-service/currency
+	
+	
+	
+	
+ZIPKIN SERVER: http://localhost:9411
+
+
+ZIPKIN EXAMPLE:
+	http://localhost:8787/zipkin-service/zipkin
+

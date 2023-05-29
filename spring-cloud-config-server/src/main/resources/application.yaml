@@ -1,0 +1,10 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://home/kgeza/MAGAN/github_repos/microservices/spring-medium-microservice-example/config-repo

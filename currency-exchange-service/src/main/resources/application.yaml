@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: currency-exchange-service
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: 'true'
+  datasource:
+    url: jdbc:postgresql://localhost:5432/currency_exchange
+    username: 'username'
+    password: 'password'
+server:
+  port: 8000
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8777/eureka/"
